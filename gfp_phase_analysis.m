@@ -223,7 +223,7 @@ for xy = 1:xy_final
     UpperBound = 8;     % upper bound for glucose only
     
     % to actually trim the set:
-    p_clone_trim1 = ParticleTrim_glycogen(p_clone,TrimField,LowerBound,UpperBound);
+    p_clone_trim1 = ParticleTrim_gfp(p_clone,TrimField,LowerBound,UpperBound);
     
     
     %
@@ -234,7 +234,7 @@ for xy = 1:xy_final
     UpperBound = 1.4;     % upper bound for all conditions
 
     % to actually trim the set:
-    p_clone_trim2 = ParticleTrim_glycogen(p_clone_trim1,TrimField,LowerBound,UpperBound);
+    p_clone_trim2 = ParticleTrim_gfp(p_clone_trim1,TrimField,LowerBound,UpperBound);
     
     
     % remove rows without data
@@ -244,7 +244,7 @@ for xy = 1:xy_final
     TrackMode = 'position';       % Choice of {position, velocity, acceleration} to predict position based on previous behavior
     DistanceLimit = 5;            % Limit of distance a particle can travel between frames, in units defined by ConversionFactor
     MatchMethod = 'best';         % Choice of {best, single}
-    p_Tracks = Particle_Track_glycogen(p_clone_trim2,TrackMode,DistanceLimit,MatchMethod);
+    p_Tracks = Particle_Track_gfp(p_clone_trim2,TrackMode,DistanceLimit,MatchMethod);
     
     
     
